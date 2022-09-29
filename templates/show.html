@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Speed Limit Signs Recognition Model</h1>
+    <h2>Prediction</h2>
+    <hr>
+    <div><img src="{{ result.path_to_image2 }}" class="img-rounded" width="{{ 600 }}" height="auto"></div>
+    <hr>
+    <h3>Predicted signal: {{ result.output }}</h3>
+    <hr>
+    <div><img src="{{ result.path_to_image }}" class="img-rounded" width="{{ result.size }}" height="auto"></div>
+    <hr>
+    <h3>Accuracy: {{ result.final_score }}</h3>
+
+    <a href="{{ url_for('upload_file') }}" class="btn btn-default">Go Back</a>
+</div>
+{% endblock %}
